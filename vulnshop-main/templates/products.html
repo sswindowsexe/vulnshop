@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Detailed Inventory Analytics</h2>
+    <p style="color:#aaa;">Simulate parameter boundary breakouts by modifying the URL query string: <code>?id=1 OR 1=1</code></p>
+    
+    {% if products %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Price ($)</th>
+                    <th>Description Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product['id'] }}</td>
+                    <td>{{ product['name'] }}</td>
+                    <td>{{ product['price'] }}</td>
+                    <td>{{ product['description'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p style="color: var(--danger-color); margin-top: 1rem;">No query matching that product identity index could be located.</p>
+    {% endif %}
+</div>
+{% endblock %}

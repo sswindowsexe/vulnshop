@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Product Inventory Lookup</h2>
+    <form action="/search" method="GET">
+        <div class="form-group" style="display: flex; gap: 10px; max-width: 500px;">
+            <input type="text" name="q" placeholder="Search products..." value="{{ query }}">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+    
+    {% if query %}
+        <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+            <p>You searched for: <strong>{{ query | safe }}</strong></p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

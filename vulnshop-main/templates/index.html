@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="warning-banner">
+    <strong>⚠️ WARNING:</strong> This application is intentionally engineered with high-severity vulnerabilities for training. Restrict usage strictly to localhost execution.
+</div>
+<div class="card">
+    <h1>Welcome to VulnShop</h1>
+    <p>This localized training environment maps closely to real-world application security issues. Navigate through the upper menu links to test components built to break.</p>
+</div>
+<div class="card">
+    <h3>Quick Test Shortcuts:</h3>
+    <ul>
+        <li><strong>Reflected XSS:</strong> Target the query parameters on the search field.</li>
+        <li><strong>Product Queries:</strong> Manipulate structural numerical indices on products.</li>
+        <li><strong>Auth Bypass:</strong> Test SQL strings inside fields to subvert matching rules.</li>
+    </ul>
+</div>
+{% endblock %}

